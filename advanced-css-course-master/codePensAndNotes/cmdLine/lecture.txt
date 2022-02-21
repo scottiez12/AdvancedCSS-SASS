@@ -1,0 +1,6 @@
+dir -- lists all contents of the current directory
+cd directory -- move to the specified directory 
+  cd.. -- moves up one step in the folder structure
+clear -- clears terminal
+mkdir name -- creates a new directory of the specified name
+echo name -- create files

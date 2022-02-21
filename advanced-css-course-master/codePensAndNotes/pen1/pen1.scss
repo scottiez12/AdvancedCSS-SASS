@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$primary-color: #f9ed69; //yellow color
+$secondary-color: #f08a5d;
+$tertiary-color: #b83b5e;
+$text-color-dark: #333;
+$button-width: 150px;
+$text-color-light: #eee;
+
+@function divideInHalf($a, $b) {
+  @return $a / $b;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin style-link-text($col) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $col;
+}
+
+nav {
+  margin: 30px;
+  background-color: $primary-color;
+  @include clearfix;
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    a:link {
+      @include style-link-text($text-color-dark);
+    }
+  }
+}
+
+.buttons {
+  float: right;
+}
+
+%btn-placeholder {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  width: $button-width;
+  @include style-link-text($text-color-light);
+}
+
+.btn-main {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $secondary-color;
+  }
+
+  &:hover {
+    background-color: darken($secondary-color, 15%);
+  }
+}
+.btn-hot {
+  &:link {
+    @extend %btn-placeholder;
+    background-color: $tertiary-color;
+  }
+
+  &:hover {
+    background-color: lighten($tertiary-color, 15%);
+  }
+}
