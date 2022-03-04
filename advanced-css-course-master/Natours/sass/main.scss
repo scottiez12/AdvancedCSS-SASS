@@ -178,7 +178,7 @@ body {
 }
 
 .btn::after {
-  /*these params HAVE TO HAVE VALUES or else it wont' render...content and display*/
+  /*content and display HAVE TO HAVE VALUES or else it won't render...*/
   content: "";
   display: inline-block;
   height: 100%;
