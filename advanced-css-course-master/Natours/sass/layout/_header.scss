@@ -1,0 +1,39 @@
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*this "cuts" a piece of something off... to give the wedge look... points go clockwise from the top left
+    clippy css clip path maker is a good tool for this... also notice the 75vh on the 3rd point, that keeps it responsive
+    */
+  /* clip-path: polygon(x y, x y, x y, x y); */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*this is how the absoltue works on the logo-box, because it's using the parent element that is relative as a reference point for the top/bot/left/right params*/
+  position: relative;
+
+  &__logo-box {
+    /*absolute positioning....so top/bot/left/right puts it exactly where we want it*/
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*the button is an inline block element, so it gets treated like text, so to center it, we just put text-align:center on the parent element*/
+    text-align: center;
+  }
+}
