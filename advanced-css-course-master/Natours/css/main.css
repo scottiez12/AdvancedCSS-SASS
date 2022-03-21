@@ -361,8 +361,6 @@ body {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
-  -webkit-transform: skewY(0deg);
-          transform: skewY(0deg);
 }
 
 .feature-box__icon {
