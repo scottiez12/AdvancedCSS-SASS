@@ -13,6 +13,10 @@
     */
   /* clip-path: polygon(x y, x y, x y, x y); */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  }
   /*this is how the absoltue works on the logo-box, because it's using the parent element that is relative as a reference point for the top/bot/left/right params*/
   position: relative;
 

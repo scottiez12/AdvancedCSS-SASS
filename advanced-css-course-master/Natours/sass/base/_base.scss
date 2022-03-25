@@ -11,10 +11,34 @@
 /*this is the superhack for using REMs for everything... this keeps with whatever the user has set as their default browser size, but now we're
 working in sets of 10px... so 1rem now = 10px.*/
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    //width < 1200?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%;
+  }
+
+  @include respond(tab-port) {
+    // width< 900?
+    font-size: 50%; //1rem = 8px, 9/16 = 50%;
+  }
+
+  @include respond(phone) {
+    // width< 600?
+    font-size: 40%; //1rem = 6.4px, 6.4/16 = 40%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16 = 75%;;
+  }
 }
 
 /* since css works via inheritance, setting the definitions for the font stuff will let it cascade down into all the child elements */
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
